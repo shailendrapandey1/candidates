@@ -1,0 +1,49 @@
+
+<html>
+
+<script>
+    function search()
+    {
+        tables = document.getElementsByTagName('table');
+        found = false;
+        for(var i=0; i<tables.length; i++)
+        {
+            if(tables[i].getElementsByTagName('td')[1].textContent == document.getElementById('searchbox').value)
+            {
+                found = true;
+                alert('Hello: '+tables[i].getElementsByTagName('td')[3].textContent
+                    + '\nYour Panel is: ' + tables[i].getElementsByTagName('td')[5].textContent
+                    + '\nYour Lunch Venue is: ' + tables[i].getElementsByTagName('td')[7].textContent);
+            }
+            
+        }
+        if(! found)
+            alert('Please check your roll no. !');
+
+            document.getElementById('searchbox').value = "";
+    }
+</script>
+
+<h1>Candidate Search</h1>
+
+Search your Roll no.:
+<input type="text" id="searchbox">
+<input type="button" value="Search" onclick="search()">
+
+<table style="display: none;">
+    <tr><td>Roll No. </td><td>123</td></tr>
+    <tr><td>Name </td><td>Ms. PQR</td></tr>
+    <tr><td>Panel</td><td>456</td></tr>
+    <tr><td>Lunch Venue</td><td>8-B</td></tr>
+    </tr>
+</table>
+
+<table style="display: none;">
+    <tr><td>Roll No. </td><td>789</td></tr>
+    <tr><td>Name </td><td>Mr. ABC</td></tr>
+    <tr><td>Panel</td><td>456</td></tr>
+    <tr><td>Lunch Venue</td><td>8-B</td></tr>
+    </tr>
+</table>
+
+</html>
